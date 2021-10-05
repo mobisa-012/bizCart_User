@@ -38,7 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       child: Scaffold(
         backgroundColor: CustomColor.secondaryColor,
+
         drawer: Drawer(
+
           child: Container(
             color: CustomColor.secondaryColor,
             child: ListView(
