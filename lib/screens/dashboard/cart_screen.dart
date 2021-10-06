@@ -28,6 +28,9 @@ class _CartScreenState extends State<CartScreen> {
               HeaderWidget(name: Strings.myShoppingCart,),
               bodyWidget(context),
               checkOutWidget(context)
+
+
+              
             ],
           ),
         ),
