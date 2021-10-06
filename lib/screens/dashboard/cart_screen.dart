@@ -27,10 +27,13 @@ class _CartScreenState extends State<CartScreen> {
             children: [
               HeaderWidget(name: Strings.myShoppingCart,),
               bodyWidget(context),
-              checkOutWidget(context)
-
-
+              checkOutWidget(context),
+              Container(
+                child: Row(),
+              )
               
+
+
             ],
           ),
         ),
