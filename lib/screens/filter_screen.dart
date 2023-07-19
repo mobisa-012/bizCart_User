@@ -19,7 +19,6 @@ class _FilterScreenState extends State<FilterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return SafeArea(
       child: Scaffold(
         backgroundColor: CustomColor.secondaryColor,

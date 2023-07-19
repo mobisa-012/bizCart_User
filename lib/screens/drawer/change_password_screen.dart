@@ -49,13 +49,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   TextFormField(
                     style: CustomStyle.textStyle,
                     controller: oldPasswordController,
-                    validator: (String value){
-                      if(value.isEmpty){
-                        return Strings.pleaseFillOutTheField;
-                      }else{
-                        return null;
-                      }
-                    },
+                    validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                     decoration: InputDecoration(
                       labelText: Strings.oldPassword,
                       contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -90,13 +90,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   TextFormField(
                     style: CustomStyle.textStyle,
                     controller: newPasswordController,
-                    validator: (String value){
-                      if(value.isEmpty){
-                        return Strings.pleaseFillOutTheField;
-                      }else{
-                        return null;
-                      }
-                    },
+                    validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                     decoration: InputDecoration(
                       labelText: Strings.newPassword,
                       contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -131,13 +131,13 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   TextFormField(
                     style: CustomStyle.textStyle,
                     controller: confirmPasswordController,
-                    validator: (String value){
-                      if(value.isEmpty){
-                        return Strings.pleaseFillOutTheField;
-                      }else{
-                        return null;
-                      }
-                    },
+                    validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                     decoration: InputDecoration(
                       labelText: Strings.rePassword,
                       contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),

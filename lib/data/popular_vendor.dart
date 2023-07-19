@@ -2,7 +2,7 @@ class PopularVendor {
   final int id;
   final String image;
 
-  const PopularVendor({this.id, this.image});
+  const PopularVendor({required this.id, required this.image});
 }
 
 class PopularVendorList {

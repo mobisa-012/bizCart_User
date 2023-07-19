@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:bizcart/widgets/header_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +17,7 @@ class MyProfileScreen extends StatefulWidget {
 
 class _MyProfileScreenState extends State<MyProfileScreen> {
 
-  File _image;
+  late File _image;
 
   @override
   Widget build(BuildContext context) {
@@ -184,11 +186,12 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
         });
   }
 
-  File file;
+  late File file;
 
   void _chooseFromGallery() async{
+    ImagePicker imagePicker = ImagePicker();
     // ignore: deprecated_member_use
-    file = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 40);
+    file = (await imagePicker.pickImage(source: ImageSource.gallery, imageQuality: 40)) as File;
 
     if (file == null){
       Fluttertoast.showToast(msg: 'No File Selected');
@@ -201,9 +204,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   }
 
   _chooseFromCamera() async{
+    ImagePicker imagePicker = ImagePicker();
     print('open camera');
     //ignore: deprecated_member_use
-    file = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 20);
+    file = (await imagePicker.pickImage(source: ImageSource.camera, imageQuality: 20)) as File;
 
     print('picked camera');
     if (file == null){

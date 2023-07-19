@@ -4,7 +4,7 @@ import 'package:bizcart/utils/dimensions.dart';
 class HeaderWidget extends StatefulWidget {
   final String name;
 
-  const HeaderWidget({Key key, this.name}) : super(key: key);
+  const HeaderWidget({Key? key, required this.name}) : super(key: key);
 
   @override
   _HeaderWidgetState createState() => _HeaderWidgetState();

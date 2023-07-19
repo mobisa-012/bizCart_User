@@ -16,7 +16,6 @@ import 'package:bizcart/utils/colors.dart';
 import 'package:bizcart/utils/custom_style.dart';
 import 'package:bizcart/utils/dimensions.dart';
 import 'package:bizcart/utils/strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -8,8 +8,9 @@ class Cart {
   final String rating;
   final String piece;
 
-  const Cart({this.id, this.name, this.image, this.discount, this.oldPrice, this.newPrice,
-    this.rating, this.piece});
+  const Cart({ required this.id, required this.name, required this.image, required this.discount, 
+  required this.oldPrice, required this.newPrice,
+    required this.rating, required this.piece});
 }
 
 class CartList {

@@ -7,7 +7,14 @@ class TrendingProduct {
   final String rating;
   final bool isSaved;
 
-  const TrendingProduct({this.id, this.name, this.image, this.stock, this.price, this.rating, this.isSaved});
+  const TrendingProduct({
+    required this.id, 
+    required this.name, 
+    required this.image, 
+    required this.stock, 
+    required this.price, 
+    required this.rating, 
+    required this.isSaved});
 }
 
 class TrendingProductList {

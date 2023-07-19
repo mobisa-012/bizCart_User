@@ -4,7 +4,6 @@ import 'package:bizcart/utils/custom_style.dart';
 import 'package:bizcart/utils/dimensions.dart';
 import 'package:bizcart/utils/strings.dart';
 import 'package:bizcart/widgets/back_widget.dart';
-import 'package:custom_switch/custom_switch.dart';
 import 'package:flutter/material.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -273,13 +272,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
               style: CustomStyle.textStyle,
               controller: numberController,
               keyboardType: TextInputType.number,
-              validator: (String value){
-                if(value.isEmpty){
-                  return Strings.pleaseFillOutTheField;
-                }else{
-                  return null;
-                }
-              },
+              validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
               decoration: InputDecoration(
                 hintText: Strings.demoCardNumber,
                 contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -297,13 +296,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
               style: CustomStyle.textStyle,
               controller: nameController,
               keyboardType: TextInputType.name,
-              validator: (String value){
-                if(value.isEmpty){
-                  return Strings.pleaseFillOutTheField;
-                }else{
-                  return null;
-                }
-              },
+              validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
               decoration: InputDecoration(
                 hintText: Strings.demoName,
                 contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -328,13 +327,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         style: CustomStyle.textStyle,
                         controller: expDateController,
                         keyboardType: TextInputType.number,
-                        validator: (String value){
-                          if(value.isEmpty){
-                            return Strings.pleaseFillOutTheField;
-                          }else{
-                            return null;
-                          }
-                        },
+                       validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                         decoration: InputDecoration(
                           hintText: '02/30',
                           contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -360,13 +359,13 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         style: CustomStyle.textStyle,
                         controller: cvvController,
                         keyboardType: TextInputType.number,
-                        validator: (String value){
-                          if(value.isEmpty){
-                            return Strings.pleaseFillOutTheField;
-                          }else{
-                            return null;
-                          }
-                        },
+                        validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                         decoration: InputDecoration(
                           hintText: '123',
                           contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -402,20 +401,20 @@ class _PaymentScreenState extends State<PaymentScreen> {
               color: Colors.black
             ),
           ),
-          SizedBox(
-            height: 30,
-            width: 70,
-            child: CustomSwitch(
-              activeColor: CustomColor.primaryColor,
-              value: status,
-              onChanged: (value) {
-                print("VALUE : $value");
-                setState(() {
-                  status = value;
-                });
-              },
-            ),
-          ),
+          // SizedBox(
+          //   height: 30,
+          //   width: 70,
+          //   child: CustomSwitch(
+          //     activeColor: CustomColor.primaryColor,
+          //     value: status,
+          //     onChanged: (value) {
+          //       print("VALUE : $value");
+          //       setState(() {
+          //         status = value;
+          //       });
+          //     },
+          //   ),
+          // ),
         ],
       ),
     );

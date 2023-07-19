@@ -97,8 +97,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 style: CustomStyle.textStyle,
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
-                validator: (String value){
-                  if(value.isEmpty){
+                validator: ( value){
+                  if(value!.isEmpty){
                     return Strings.pleaseFillOutTheField;
                   }else{
                     return null;
@@ -125,8 +125,8 @@ class _SignInScreenState extends State<SignInScreen> {
               TextFormField(
                 style: CustomStyle.textStyle,
                 controller: passwordController,
-                validator: (String value){
-                  if(value.isEmpty){
+                validator: (value){
+                  if(value!.isEmpty){
                     return Strings.pleaseFillOutTheField;
                   }else{
                     return null;

@@ -14,7 +14,6 @@ class IntroScreen extends StatefulWidget {
 class _IntroScreenState extends State<IntroScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
   }
 

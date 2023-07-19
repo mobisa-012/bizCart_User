@@ -8,9 +8,9 @@ class Fashion {
   final String rating;
   final bool isSaved;
 
-  const Fashion({this.id, this.name, this.image, this.stock, this.price, this.oldPrice, this
+  const Fashion({required this.id, required this.name, required this.image, required this.stock, required this.price, required this.oldPrice,required this
       .rating,
-    this
+    required this
       .isSaved});
 }
 

@@ -56,13 +56,13 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               style: CustomStyle.textStyle,
               controller: emailController,
               keyboardType: TextInputType.name,
-              validator: (String value){
-                if(value.isEmpty){
-                  return Strings.pleaseFillOutTheField;
-                }else{
-                  return null;
-                }
-              },
+              validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
               decoration: InputDecoration(
                 labelText: Strings.email,
                 contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),

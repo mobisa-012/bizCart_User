@@ -1,10 +1,11 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
 import 'package:bizcart/utils/dimensions.dart';
 import 'package:bizcart/utils/custom_style.dart';
 import 'package:bizcart/utils/strings.dart';
 import 'package:bizcart/utils/colors.dart';
 import 'package:bizcart/screens/dashboard_screen.dart';
-import 'package:bizcart/widgets/my_rating.dart';
 import 'package:bizcart/widgets/back_widget.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:io';
@@ -19,7 +20,7 @@ class SubmitReviewScreen extends StatefulWidget {
 class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
 
   TextEditingController commentController = TextEditingController();
-  File _image;
+  late File _image;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -76,7 +77,7 @@ class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
                       ),
                     ),
                     SizedBox(height: Dimensions.heightSize * 0.5,),
-                    MyRating(rating: '5',)
+                    // MyRating(rating: '5',)
                   ],
                 ),
               ),
@@ -93,7 +94,7 @@ class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
                       ),
                     ),
                     SizedBox(height: Dimensions.heightSize * 0.5,),
-                    MyRating(rating: '5',)
+                    // MyRating(rating: '5',)
                   ],
                 ),
               ),
@@ -116,7 +117,7 @@ class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
                       ),
                     ),
                     SizedBox(height: Dimensions.heightSize * 0.5,),
-                    MyRating(rating: '5',)
+                    // MyRating(rating: '5',)
                   ],
                 ),
               ),
@@ -133,7 +134,7 @@ class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
                       ),
                     ),
                     SizedBox(height: Dimensions.heightSize * 0.5,),
-                    MyRating(rating: '5',)
+                    // MyRating(rating: '5',)
                   ],
                 ),
               ),
@@ -153,13 +154,13 @@ class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
             style: CustomStyle.textStyle,
             controller: commentController,
             keyboardType: TextInputType.name,
-            validator: (String value){
-              if(value.isEmpty){
-                return Strings.pleaseFillOutTheField;
-              }else{
-                return null;
-              }
-            },
+            validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
             decoration: InputDecoration(
               hintText: Strings.contraryToPopular,
               contentPadding: EdgeInsets.symmetric(vertical: 40.0, horizontal: 10.0),
@@ -305,11 +306,12 @@ class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
         });
   }
 
-  File file;
+ late  File file;
 
   void _chooseFromGallery() async{
+    ImagePicker imagePicker = ImagePicker();
     // ignore: deprecated_member_use
-    file = await ImagePicker.pickImage(source: ImageSource.gallery, imageQuality: 40);
+    file = (await imagePicker.pickImage(source: ImageSource.gallery, imageQuality: 40)) as File;
 
     if (file == null){
       Fluttertoast.showToast(msg: 'No File Selected');
@@ -322,9 +324,10 @@ class _SubmitReviewScreenState extends State<SubmitReviewScreen> {
   }
 
   _chooseFromCamera() async{
+    ImagePicker imagePicker = ImagePicker();
     print('open camera');
     //ignore: deprecated_member_use
-    file = await ImagePicker.pickImage(source: ImageSource.camera, imageQuality: 20);
+    file = (await imagePicker.pickImage(source: ImageSource.camera, imageQuality: 20)) as File;
 
     print('picked camera');
     if (file == null){

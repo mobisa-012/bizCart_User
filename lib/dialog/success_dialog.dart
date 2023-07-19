@@ -5,7 +5,7 @@ import 'package:bizcart/utils/dimensions.dart';
 class SuccessDialog extends StatefulWidget {
   final String title, subTitle, buttonName;
   final Widget moved;
-  const SuccessDialog({Key key, this.title, this.subTitle, this.buttonName, this.moved}) : super(key:
+  const SuccessDialog({Key? key, required this.title,required this.subTitle, required this.buttonName, required this.moved}) : super(key:
 key);
 
   @override

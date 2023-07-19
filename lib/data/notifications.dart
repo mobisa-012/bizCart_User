@@ -5,7 +5,7 @@ class Notifications {
   final String time;
 
 
-  const Notifications({this.id, this.title, this.subTitle, this.time});
+  const Notifications({required this.id, required this.title, required this.subTitle, required this.time});
 }
 
 class NotificationList {

@@ -5,7 +5,7 @@ import 'package:bizcart/utils/colors.dart';
 class BackWidget extends StatefulWidget {
   final String name;
 
-  const BackWidget({Key key, this.name}) : super(key: key);
+  const BackWidget({Key? key, required this.name}) : super(key: key);
 
   @override
   _BackWidgetState createState() => _BackWidgetState();

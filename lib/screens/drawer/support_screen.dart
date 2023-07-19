@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bizcart/utils/colors.dart';
 import 'package:bizcart/utils/custom_style.dart';
@@ -275,13 +274,13 @@ class _SupportScreenState extends State<SupportScreen> {
                               style: CustomStyle.textStyle,
                               controller: messageController,
                               keyboardType: TextInputType.name,
-                              validator: (String value){
-                                if(value.isEmpty){
-                                  return Strings.typeSomething;
-                                }else{
-                                  return null;
-                                }
-                              },
+                              validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                               decoration: InputDecoration(
                                 hintText: Strings.typeMessage,
                                 contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),

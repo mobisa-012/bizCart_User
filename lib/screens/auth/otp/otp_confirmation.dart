@@ -1,7 +1,7 @@
+// ignore_for_file: cast_from_null_always_fails, unnecessary_null_comparison
+
 import 'dart:async';
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:bizcart/utils/dimensions.dart';
@@ -18,9 +18,9 @@ class OtpConfirmation extends StatefulWidget {
   final String emailAddress;
   final Future<String> Function(String) validateOtp;
   final void Function(BuildContext) routeCallback;
-  Color topColor;
-  Color bottomColor;
-  bool _isGradientApplied;
+  late Color topColor;
+  late Color bottomColor;
+  late bool _isGradientApplied;
   final Color titleColor;
   final Color themeColor;
   final Color keyboardBackgroundColor;
@@ -30,33 +30,33 @@ class OtpConfirmation extends StatefulWidget {
   final int otpLength;
 
   OtpConfirmation({
-    Key key,
+    Key? key,
     this.title = "Verification Code",
     this.subTitle = "please enter the OTP sent to your\n device",
     this.otpLength = 4,
-    @required this.validateOtp,
-    @required this.routeCallback,
+    required this.validateOtp,
+    required this.routeCallback,
     this.themeColor = Colors.black,
     this.titleColor = Colors.black,
-    this.icon,
-    this.keyboardBackgroundColor, this.image, this.emailAddress,
+    required this.icon,
+    required this.keyboardBackgroundColor, required this.image, required this.emailAddress,
   }) : super(key: key) {
     this._isGradientApplied = false;
   }
 
   OtpConfirmation.withGradientBackground(
-      {Key key,
+      {Key? key,
         this.title = "Verification Code",
         this.subTitle = "please enter the OTP sent to your\n device",
         this.otpLength = 4,
-        @required this.validateOtp,
-        @required this.routeCallback,
+        required this.validateOtp,
+       required this.routeCallback,
         this.themeColor = Colors.white,
         this.titleColor = Colors.white,
-        @required this.topColor,
-        @required this.bottomColor,
-        this.keyboardBackgroundColor,
-        this.icon, this.image, this.emailAddress})
+        required this.topColor,
+        required this.bottomColor,
+        required this.keyboardBackgroundColor,
+        required this.icon, required this.image, required this.emailAddress})
       : super(key: key) {
     this._isGradientApplied = true;
   }
@@ -67,14 +67,14 @@ class OtpConfirmation extends StatefulWidget {
 
 class _OtpConfirmationState extends State<OtpConfirmation>
     with SingleTickerProviderStateMixin {
-  Size _screenSize;
-  int _currentDigit;
-  List<int> otpValues;
+  late Size _screenSize;
+  late int _currentDigit;
+  late List<int> otpValues;
   bool showLoadingButton = false;
 
   @override
   void initState() {
-    otpValues = List<int>.filled(widget.otpLength, null, growable: false);
+    otpValues = List<int>.filled(widget.otpLength, 0,growable: false);
     super.initState();
   }
 
@@ -112,7 +112,7 @@ class _OtpConfirmationState extends State<OtpConfirmation>
   /// Returns otp fields of length [widget.otpLength]
   List<Widget> getOtpTextWidgetList() {
     // ignore: deprecated_member_use
-    List<Widget> optList = List();
+    List<Widget> optList = [];
     for (int i = 0; i < widget.otpLength; i++) {
       optList.add(_otpTextField(otpValues[i]));
     }
@@ -264,11 +264,9 @@ class _OtpConfirmationState extends State<OtpConfirmation>
                       ),
                       onPressed: () {
                         setState(() {
-                          for (int i = widget.otpLength - 1; i >= 0; i--) {
-                            if (otpValues[i] != null) {
-                              otpValues[i] = null;
-                              break;
-                            }
+                          for (int i = widget.otpLength - 1; i >= 0; ) {
+                            otpValues[i] = null as int;
+                            break;
                           }
                         });
                       }),
@@ -308,7 +306,7 @@ class _OtpConfirmationState extends State<OtpConfirmation>
   }
 
   /// Returns "Otp keyboard input Button"
-  Widget _otpKeyboardInputButton({String label, VoidCallback onPressed}) {
+  Widget _otpKeyboardInputButton({required String label, VoidCallback? onPressed}) {
     return new Material(
       color: Colors.transparent,
       child: new InkWell(
@@ -335,7 +333,7 @@ class _OtpConfirmationState extends State<OtpConfirmation>
   }
 
   /// Returns "Otp keyboard action Button"
-  _otpKeyboardActionButton({Widget label, VoidCallback onPressed}) {
+  _otpKeyboardActionButton({required Widget label, VoidCallback? onPressed}) {
     return new InkWell(
       onTap: onPressed,
       borderRadius: new BorderRadius.circular(40.0),
@@ -382,7 +380,7 @@ class _OtpConfirmationState extends State<OtpConfirmation>
 
   ///to clear otp when error occurs
   void clearOtp() {
-    otpValues = List<int>.filled(widget.otpLength, null, growable: false);
+    otpValues = List<int>.filled(widget.otpLength, null as int, growable: false);
     setState(() {});
   }
 

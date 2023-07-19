@@ -1,5 +1,4 @@
 import 'package:bizcart/utils/dimensions.dart';
-import 'package:bizcart/widgets/my_rating.dart';
 import 'package:flutter/material.dart';
 
 class ReviewWidget extends StatelessWidget {
@@ -21,7 +20,7 @@ class ReviewWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                MyRating(rating: '4',),
+                // MyRating(rating: '4',),
                 SizedBox(height: Dimensions.heightSize * 0.5,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

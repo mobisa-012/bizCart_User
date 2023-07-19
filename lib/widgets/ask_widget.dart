@@ -22,13 +22,13 @@ class AskWidget extends StatelessWidget {
             style: CustomStyle.textStyle,
             controller: commentController,
             keyboardType: TextInputType.text,
-            validator: (String value){
-              if(value.isEmpty){
-                return Strings.pleaseFillOutTheField;
-              }else{
-                return null;
-              }
-            },
+           validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
             decoration: InputDecoration(
                 hintText: Strings.typeMessage,
                 contentPadding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 10.0),

@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bizcart/screens/dashboard/cart_screen.dart';
 import 'package:bizcart/screens/dashboard/home_screen.dart';
 import 'package:bizcart/screens/dashboard/my_profile_screen.dart';
@@ -16,7 +18,7 @@ class DashboardScreen extends StatefulWidget {
 class _DashboardScreenState extends State<DashboardScreen> {
 
   int currentIndex = 0;
-  PageController _pageController;
+  late PageController _pageController;
 
   @override
   void initState() {

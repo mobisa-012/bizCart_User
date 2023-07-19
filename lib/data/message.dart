@@ -5,7 +5,7 @@ class Message {
   final String text;
   final String time;
 
-  const Message({this.id, this.type, this.name, this.text, this.time});
+  const Message({required this.id, required this.type, required this.name, required this.text, required this.time});
 }
 
 class MessageList {
@@ -22,7 +22,7 @@ class MessageList {
           id: 2,
           text: 'hello',
           type: 'receiver',
-          time: '5.10 pm'
+          time: '5.10 pm', name: 'Harrion Max'
       ),
       Message(
           id: 3,
@@ -32,6 +32,7 @@ class MessageList {
           time: '5.20 pm'
       ),
       Message(
+        name: 'Harrion Max',
           id: 4,
           text: 'Thanks',
           type: 'receiver',
@@ -48,7 +49,7 @@ class MessageList {
           id: 6,
           text: 'Thanks sir you have a good day ',
           type: 'receiver',
-          time: '5.33 pm'
+          time: '5.33 pm',name: 'Harrion Max'
       ),
       Message(
           id: 7,
@@ -61,7 +62,7 @@ class MessageList {
           id: 8,
           text: 'Sure',
           type: 'receiver',
-          time: '5.47 pm'
+          time: '5.47 pm',name: 'Harrion Max'
       ),
 
     ];

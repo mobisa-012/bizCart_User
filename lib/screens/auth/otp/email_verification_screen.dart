@@ -9,7 +9,7 @@ class EmailVerificationScreen extends StatefulWidget {
 
   final String emailAddress;
 
-  const EmailVerificationScreen({Key key, this.emailAddress}) : super(key: key);
+  const EmailVerificationScreen({ Key? key, required this.emailAddress}) : super(key: key);
 
   @override
   _EmailVerificationScreenState createState() => _EmailVerificationScreenState();
@@ -18,10 +18,9 @@ class EmailVerificationScreen extends StatefulWidget {
 class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
 
   TextEditingController emailController = TextEditingController();
-  String _emailAddress;
+  late String _emailAddress;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _emailAddress = widget.emailAddress;
   }
@@ -35,7 +34,10 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
           validateOtp: validateOtp,
           routeCallback: moveToNextScreen,
           titleColor: Colors.black,
-          themeColor: Colors.black,
+          themeColor: Colors.black, 
+          icon: Icon(Icons.check), 
+          image: '', 
+          keyboardBackgroundColor: Colors.transparent,
         ),
       ),
     );

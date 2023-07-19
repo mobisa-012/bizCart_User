@@ -7,7 +7,7 @@ class OnBoardingItem {
   final String image;
   final String subImage;
 
-  const OnBoardingItem({this.title, this.subTitle, this.image, this.subImage});
+  const OnBoardingItem({required this.title, required this.subTitle, required this.image, required this.subImage});
 }
 
 class OnBoardingItems {

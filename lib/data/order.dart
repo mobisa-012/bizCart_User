@@ -11,8 +11,8 @@ class Order {
   final String status;
   final String date;
 
-  const Order({this.id, this.name, this.image, this.discount, this.oldPrice, this.newPrice,
-    this.rating, this.piece, this.orderId, this.status, this.date});
+  const Order({ required this.id, required this.name,required this.image, required this.discount,required this.oldPrice,required this.newPrice,
+    required this.rating,required this.piece,required this.orderId, required this.status, required this.date});
 }
 
 class OrderList {

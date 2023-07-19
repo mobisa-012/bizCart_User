@@ -216,8 +216,8 @@ class _AddressScreenState extends State<AddressScreen> {
                 style: CustomStyle.textStyle,
                 controller: nameController,
                 keyboardType: TextInputType.name,
-                validator: (String value){
-                  if(value.isEmpty){
+                validator: (value){
+                  if(value!.isEmpty){
                     return Strings.pleaseFillOutTheField;
                   }else{
                     return null;
@@ -240,8 +240,8 @@ class _AddressScreenState extends State<AddressScreen> {
                 style: CustomStyle.textStyle,
                 controller: emailController,
                 keyboardType: TextInputType.emailAddress,
-                validator: (String value){
-                  if(value.isEmpty){
+                validator: (value){
+                  if(value!.isEmpty){
                     return Strings.pleaseFillOutTheField;
                   }else{
                     return null;
@@ -271,13 +271,13 @@ class _AddressScreenState extends State<AddressScreen> {
                           style: CustomStyle.textStyle,
                           controller: cityController,
                           keyboardType: TextInputType.text,
-                          validator: (String value){
-                            if(value.isEmpty){
-                              return Strings.pleaseFillOutTheField;
-                            }else{
-                              return null;
-                            }
-                          },
+                          validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                           decoration: InputDecoration(
                             hintText: Strings.demoCity,
                             contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -303,13 +303,13 @@ class _AddressScreenState extends State<AddressScreen> {
                           style: CustomStyle.textStyle,
                           controller: zipController,
                           keyboardType: TextInputType.number,
-                          validator: (String value){
-                            if(value.isEmpty){
-                              return Strings.pleaseFillOutTheField;
-                            }else{
-                              return null;
-                            }
-                          },
+                          validator: (value){
+                  if(value!.isEmpty){
+                    return Strings.pleaseFillOutTheField;
+                  }else{
+                    return null;
+                  }
+                },
                           decoration: InputDecoration(
                             hintText: Strings.demoZipCode,
                             contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
@@ -332,8 +332,8 @@ class _AddressScreenState extends State<AddressScreen> {
                 style: CustomStyle.textStyle,
                 controller: stateController,
                 keyboardType: TextInputType.text,
-                validator: (String value){
-                  if(value.isEmpty){
+                validator: (value){
+                  if(value!.isEmpty){
                     return Strings.pleaseFillOutTheField;
                   }else{
                     return null;
@@ -356,8 +356,8 @@ class _AddressScreenState extends State<AddressScreen> {
                 style: CustomStyle.textStyle,
                 controller: phoneController,
                 keyboardType: TextInputType.number,
-                validator: (String value){
-                  if(value.isEmpty){
+               validator: (value){
+                  if(value!.isEmpty){
                     return Strings.pleaseFillOutTheField;
                   }else{
                     return null;
